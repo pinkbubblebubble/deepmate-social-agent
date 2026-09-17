@@ -124,10 +124,10 @@
     <h1>孵化你的<br>社交 AI 分身</h1>
     <div class="sub">
       它会替你破冰，帮你找对的人，还是默默记住所有关系线索？<br>
-      做 7 个选择，看看你的 AI 分身会长成什么样。
+      做 10 个选择，看看你的 AI 分身会长成什么样。
     </div>
     <div class="mini">
-      <span class="chip">7 个社交瞬间</span>
+      <span class="chip">10 个社交瞬间</span>
       <span class="chip">约 60 秒</span>
       <span class="chip">生成分身通行证</span>
     </div>
@@ -221,73 +221,81 @@ async function dbInsert(table, payload){
 
 const types={
   icebreaker:{name:"破冰火花体",emoji:"✨",code:"SPARK / 01",
-    desc:"你的分身最擅长替你点燃第一句话。你并不缺想法，只是需要一个更自然的起点，让陌生关系少一点尴尬。",
-    best:"开场、回复、接话、把聊天自然推进到下一步。",
-    guide:"适合在你想主动但又怕太刻意的时候出现。它应该给你 2–3 个像你本人会说的版本，而不是直接替你发送。",
-    quote:"分身口头禅：先别想那么多，我帮你把第一句话变自然。",
-    act:74,exec:42,privacy:55},
+    desc:"你最想让 AI 帮你跨过‘怎么开口、怎么接话、怎么把话说自然’这道坎。你不是不会社交，只是希望关键时刻有人帮你点燃第一句话。",
+    best:"开场、回复、破冰、找话题和表达优化。",
+    guide:"最适合做你的幕后表达搭档：给你自然的说法和灵感，但最后怎么说仍由你决定。",
+    quote:"分身口头禅：先把第一句话说出去，关系才有机会开始。",
+    act:72,exec:38,privacy:55},
   radar:{name:"缘分雷达体",emoji:"📡",code:"RADAR / 02",
-    desc:"你最想省下的是“无效社交”的时间。你的分身会帮你在人、机会和圈子里先做筛选，再把真正值得的人推到你面前。",
-    best:"找人、筛选、判断是否值得继续投入。",
-    guide:"适合在新关系开始前帮你减少试错，但最终“要不要继续认识”应该由你决定。",
-    quote:"分身口头禅：人很多，但真正值得你花时间的不多。",
-    act:82,exec:48,privacy:52},
-  keeper:{name:"关系记忆体",emoji:"🧠",code:"KEEPER / 03",
-    desc:"你在意的不是认识更多人，而是不要把重要的人慢慢弄丢。你的分身会记住细节、上下文和那些容易被忘掉的关系线索。",
-    best:"记住关系、提醒联系、整理对方偏好和重要节点。",
-    guide:"适合长期陪伴，但所有记忆都应该能被你查看、修改和删除。",
-    quote:"分身口头禅：你忘了没关系，我记得。",
-    act:68,exec:50,privacy:66},
-  secretary:{name:"行动加速体",emoji:"⚡",code:"DOER / 04",
-    desc:"你不想再被约时间、提醒、跟进这些小事消耗。只要规则清楚，你愿意让 AI 真正把事情往前推。",
-    best:"日程协调、提醒、跟进、低风险的社交事务。",
-    guide:"适合把重复的小事交给 AI。简单事项可以自动做，涉及关系判断和重要表达时再把你拉回来确认。",
-    quote:"分身口头禅：别把脑力浪费在可以自动完成的小事上。",
-    act:88,exec:86,privacy:44},
-  guardian:{name:"边界守护体",emoji:"🛡️",code:"GUARD / 05",
-    desc:"你不是拒绝 AI，而是要求它先学会尊重。对你来说，真正聪明的 Agent 必须知道什么能做、什么绝对不能碰。",
-    best:"权限控制、隐私保护、重要动作确认。",
-    guide:"你的理想 Agent 应该默认少做一步，而不是多做一步。任何对外发送、信息共享和长期保存都需要透明。",
-    quote:"分身口头禅：可以帮，但先把边界说清楚。",
-    act:38,exec:22,privacy:94},
-  companion:{name:"情绪共振体",emoji:"🌙",code:"ECHO / 06",
-    desc:"你更希望 AI 先理解你，而不是立刻替你做决定。你的分身会像一个长期在线的情绪缓冲区，帮你整理感受和表达。",
-    best:"倾诉、情绪梳理、关系复盘、帮你把真实感受说清楚。",
-    guide:"适合在你需要被理解的时候出现，但不应该把情绪建议变成替你做关系决定。",
-    quote:"分身口头禅：我先听你说完，再想要不要解决。",
-    act:58,exec:24,privacy:70}
+    desc:"你更希望 AI 帮你找到‘对的人’，而不是在人海里自己慢慢试。无论是搭子、合作对象还是兴趣同好，你都想先缩小范围。",
+    best:"找人、匹配、发现潜在关系和资源。",
+    guide:"最适合先帮你扩大视野、缩小候选范围，再把最终选择交回给你。",
+    quote:"分身口头禅：人很多，我先帮你找到值得认识的那几个。",
+    act:80,exec:46,privacy:50},
+  detective:{name:"关系侦探体",emoji:"🔍",code:"DETECT / 03",
+    desc:"你最想少一点猜测。你希望 AI 帮你看懂谁靠谱、谁值得继续、一个活动值不值得去，以及一段关系现在到底是什么状态。",
+    best:"判断人、关系、机会与下一步是否值得投入。",
+    guide:"它应该给你判断依据和风险提示，而不是替你武断地下结论。",
+    quote:"分身口头禅：先把信号看清楚，再决定要不要往前走。",
+    act:64,exec:30,privacy:61},
+  keeper:{name:"关系记忆体",emoji:"🧠",code:"KEEPER / 04",
+    desc:"你希望 AI 成为关系里的第二大脑：记得谁说过什么、什么时候有空、最近发生了什么，以及那些你总会忘记的重要细节。",
+    best:"关系记忆、档期、近况、偏好与重要节点提醒。",
+    guide:"最适合长期积累关系上下文，但记住什么、保留多久都应该由你掌控。",
+    quote:"分身口头禅：你负责真诚，我负责别让重要细节掉在地上。",
+    act:68,exec:48,privacy:68},
+  secretary:{name:"行动加速体",emoji:"⚡",code:"DOER / 05",
+    desc:"你讨厌社交里那些来回协调、反复确认和小事务。只要方向明确，你希望 AI 直接把事情往前推。",
+    best:"约人、安排时间地点、发消息、定时发送和事务推进。",
+    guide:"最适合处理明确、低风险、可撤回的执行任务，重要动作再让你确认。",
+    quote:"分身口头禅：决定好了就别卡在流程里，我来推进。",
+    act:90,exec:88,privacy:42},
+  guardian:{name:"边界守护体",emoji:"🛡️",code:"GUARD / 06",
+    desc:"你愿意接受 AI 帮忙，但前提是关系不能失去‘本人感’。你在意控制权、授权和 AI 什么时候应该停手。",
+    best:"权限控制、重要动作确认、隐私边界和低自动化协助。",
+    guide:"你的理想 Agent 应该默认尊重边界：不乱发、不越权、不把关系变成全自动。",
+    quote:"分身口头禅：可以帮，但最后决定权一直在你手里。",
+    act:36,exec:20,privacy:95}
 };
 
 const qs=[
- {scene:"SCENE 01 · 凌晨 00:47",q:"你盯着一条消息看了 5 分钟，还没有回。你希望分身做什么？",hint:"不要想“正确答案”，选你真的会想用的。",
-  opts:[["💬","给我一个自然、不油腻的回复","icebreaker"],["🧭","先判断这个人值不值得我继续聊","radar"],["🗂️","提醒我上次和 TA 聊到哪里","keeper"],["⚡","帮我整理重点，我确认后直接发","secretary"],["🛡️","先别碰，我只想自己决定","guardian"],["🌙","先听我吐槽一下为什么不想回","companion"]]},
- {scene:"SCENE 02 · 周五晚上",q:"朋友突然说：今晚出来吗？你最希望 AI 帮哪一步？",hint:"",
-  opts:[["✨","帮我想一句不尴尬的回应","icebreaker"],["📡","先判断这局里的人和我合不合","radar"],["🧠","告诉我最近是不是很久没见他们了","keeper"],["📅","直接帮我看日历、路线和时间","secretary"],["🔒","任何对外动作都必须先问我","guardian"],["🌙","我纠结去不去，先陪我分析","companion"]]},
- {scene:"SCENE 03 · 新关系出现",q:"你刚认识一个挺有意思的人。哪种能力最像“开挂”？",hint:"",
-  opts:[["💬","自动发现我们能聊起来的话题","icebreaker"],["🎯","判断彼此是不是值得继续了解","radar"],["🧠","记住 TA 的兴趣和聊天细节","keeper"],["⚡","合适时直接提醒我推进下一步","secretary"],["🛡️","明确告诉我哪些信息不该分享","guardian"],["🌙","帮我分清喜欢、上头和焦虑","companion"]]},
+ {scene:"SCENE 01 · 凌晨 00:47",q:"你盯着一条消息看了 5 分钟，还没有回。你希望分身做什么？",hint:"不要想‘正确答案’，选你真的会想用的。",
+  opts:[["💬","给我一个自然、不油腻的回复","icebreaker"],["🔍","先判断这个人值不值得我继续聊","detective"],["🗂️","提醒我上次和 TA 聊到哪里","keeper"],["⚡","帮我整理重点，我确认后直接发","secretary"],["🛡️","先别碰，我只想自己决定","guardian"],["📡","如果这个人不合适，帮我看看还有谁更值得聊","radar"]]},
+ {scene:"SCENE 02 · 周五晚上",q:"想出去玩犒劳一下辛苦一周的自己，但又不想自己一个人，你希望 AI 帮哪一步？",hint:"选最符合你第一反应的一项。",
+  opts:[["🧲","帮我去找陌生的契合的搭子","radar"],["🗓️","帮我找到有档期的朋友","keeper"],["🤝","直接帮我约好人","secretary"],["📍","根据双方的喜好约好时间和地点","secretary"],["🔍","帮我判断和我吃饭的人靠不靠谱","detective"],["📡","告诉我应该找谁吃比较合适","radar"],["🙋","我不需要 AI，我就想自己吃","guardian"]]},
+ {scene:"SCENE 03 · 新关系出现",q:"你刚认识一个挺有意思的人。哪种能力最像‘开挂’？",hint:"",
+  opts:[["💬","自动发现我们能聊起来的话题","icebreaker"],["📅","知道他的档期，什么时候可以约出来","keeper"],["🧠","记住他的聊天风格和细节","keeper"],["⚡","合适时直接提醒我推进下一步","secretary"],["🛡️","明确告诉我哪些信息不该分享","guardian"],["🔍","帮我判断我们现在到底处在什么关系阶段","detective"]]},
  {scene:"SCENE 04 · 工作消息 99+",q:"如果你的 Agent 能替你省下一件麻烦事，你选？",hint:"",
-  opts:[["✍️","把消息改得更像我本人会说的话","icebreaker"],["🔎","帮我筛掉低价值的人和邀约","radar"],["📚","自动整理每个人的上下文","keeper"],["🤖","按规则处理低风险事务","secretary"],["🚫","别偷偷做，必须让我知道","guardian"],["💭","帮我把压力和情绪先理顺","companion"]]},
+  opts:[["✍️","把消息改得更像我本人会说的话","icebreaker"],["🔍","帮我筛掉低价值的人和邀约","detective"],["📚","自动整理每个人的上下文","keeper"],["🤖","依照对我的了解帮我处理事务的优先级","secretary"],["🚫","别偷偷做，必须让我知道","guardian"],["📡","帮我从联系人里找到最适合这件事的人","radar"]]},
  {scene:"SCENE 05 · 双方 Agent 初次见面",q:"如果双方都同意让 AI 先聊 30 秒，你最想让它交换什么？",hint:"",
-  opts:[["✨","共同话题和一个自然开场点","icebreaker"],["📡","目标、兴趣和匹配度","radar"],["🧩","双方愿意分享的背景线索","keeper"],["📆","可约时间和下一步安排","secretary"],["🔐","只交换我逐项授权的信息","guardian"],["💜","先判断彼此的交流舒适度","companion"]]},
+  opts:[["✨","共同话题和一个自然开场点","icebreaker"],["📡","目标、兴趣和匹配度","radar"],["🧩","双方愿意分享的背景线索","keeper"],["📆","可约时间和下一步安排","secretary"],["🔐","只交换我逐项授权的信息","guardian"],["🔍","先判断彼此是否值得真人继续聊","detective"]]},
  {scene:"SCENE 06 · Agent 越来越懂你",q:"哪一刻会让你第一次觉得：‘它真的懂我’？",hint:"",
-  opts:[["🗣️","它写出来的话真的像我","icebreaker"],["🎯","它推荐的人我真的愿意认识","radar"],["🧠","它记得我自己都忘了的关系细节","keeper"],["⚡","它把一件麻烦事完整处理好了","secretary"],["🛡️","它主动停下来说：这一步需要你确认","guardian"],["🌙","它知道我此刻只想被理解","companion"]]},
+  opts:[["🗣️","它写出来的话真的像我","icebreaker"],["📡","它推荐的人我真的愿意认识","radar"],["🧠","它记得我自己都忘了的关系细节","keeper"],["⚡","它把一件麻烦事完整处理好了","secretary"],["🛡️","它主动停下来说：这一步需要你确认","guardian"],["🔍","它能准确判断我和对方的关系现在处在哪一步","detective"]]},
+ {scene:"SCENE 07 · 合作需求",q:"手头有个合作要找懂行的人，你觉得朋友圈 / 老同学里可能有人在这行，但是不知道是谁。你希望 AI 帮哪一步？",hint:"",
+  opts:[["📡","帮我匹配找出可能懂这行的人","radar"],["🔍","帮我判断这些人里谁最值得先问","detective"],["💬","帮我想好怎么开口，不会显得太突然、太功利","icebreaker"],["📨","直接帮我发消息问问看，我来跟进后面的","secretary"],["🧠","帮我记住这次问到的人和行业，下次有需要能想起来","keeper"],["🙋","这种事我自己想，不用 AI","guardian"]]},
+ {scene:"SCENE 08 · 关系维护",q:"你总是太忙，老朋友的生日或者生娃的大事总记不住，但又想维护关系，你希望 Agent 能帮你做什么？",hint:"",
+  opts:[["⏰","按照亲密程度提前提醒我","keeper"],["💬","每次聊天前帮我根据对方近况找话题","icebreaker"],["🎉","自动帮我在重要节日给对方发送祝福","secretary"],["🗓️","提醒我大事，我写好文案后可以定时发送","secretary"],["🧾","帮我把他这半年的近况和大事件整理给我看","keeper"],["🙋","我不需要 Agent，我不假手于人","guardian"]]},
+ {scene:"SCENE 09 · 兴趣同好",q:"加入了一个感兴趣的户外 / 科技兴趣群，想认识一下新朋友，但群里的人都不熟悉，你希望 AI 帮你哪一步？",hint:"",
+  opts:[["🔍","帮我判断这个群里的活动值不值得加入","detective"],["👋","帮我发个破冰帖，混个脸熟","icebreaker"],["📡","帮我从群里挑几个合得来的人","radar"],["🗓️","帮我把线上聊天变成一次线下活动","secretary"],["🧠","帮我记住这些人的兴趣，下次接着聊","keeper"],["🙋","这种事我喜欢自己摸，不用 AI","guardian"]]},
  {scene:"FINAL SCENE · 你的选择",q:"最后，你希望这个分身帮你变成怎样的人？",hint:"选最有感觉的一句。",
-  opts:[["✨","更敢表达、更自然地靠近别人","icebreaker"],["📡","把时间留给真正合适的人","radar"],["🧠","不再轻易失去重要关系","keeper"],["⚡","少操心，让关系里的事务更顺","secretary"],["🛡️","始终保有自己的控制权","guardian"],["🌙","更理解自己的感受和关系","companion"]]}
+  opts:[["✨","更敢表达、更自然地靠近别人","icebreaker"],["📡","更容易找到真正合适的人","radar"],["🔍","更会看懂人和关系，不再反复猜","detective"],["🧠","不再轻易失去重要关系","keeper"],["⚡","少操心，让关系里的事务更顺","secretary"],["🛡️","始终保有自己的控制权","guardian"]]}
 ];
 
-let i=0, score={icebreaker:0,radar:0,keeper:0,secretary:0,guardian:0,companion:0};
+let i=0, score={icebreaker:0,radar:0,detective:0,keeper:0,secretary:0,guardian:0};
+let answerTypes=[];
 let sessionId = crypto.randomUUID();
 let startedAt = null;
 let currentResult = null;
 const source = new URLSearchParams(location.search).get("source") || "direct";
-const toasts=["分身正在读取你的社交偏好…","有点意思 👀","你的分身轮廓开始出现了","这一题很能区分类型","正在拼接你的关系偏好…","快孵化完成了 ✦"];
+const toasts=["分身正在读取你的社交偏好…","周五搭子偏好已记录 👀","新关系里的重点很明显","工作场景也能看出你的偏好","Agent 边界开始成形","越来越懂你的选择了","合作关系偏好已记录","关系维护偏好已记录","兴趣社交偏好已记录 ✦"];
 
 function startQuiz(){
   startedAt = Date.now();
-  dbInsert("sessions",{client_session_id:sessionId,source,started_at:new Date().toISOString(),user_agent:navigator.userAgent,referrer:document.referrer||null});
+  dbInsert("sessions",{client_session_id:sessionId,source,survey_version:"v3_2026-09-16",started_at:new Date().toISOString(),user_agent:navigator.userAgent,referrer:document.referrer||null});
   start.classList.remove("active");quiz.classList.add("active");render();
 }
 function render(){
+  window.scrollTo(0,0);
   const x=qs[i];
   scene.textContent=x.scene;q.textContent=x.q;hint.textContent=x.hint;
   count.textContent=`${i+1}/${qs.length}`;
@@ -302,15 +310,24 @@ function render(){
 }
 function choose(t, optionIndex, optionText){
   score[t]++;
+  answerTypes.push(t);
   dbInsert("answers",{client_session_id:sessionId,question_id:`q${i+1}`,option_id:`${t}_${optionIndex}`,answer_order:optionIndex,answered_at:new Date().toISOString()});
   i++;
   if(i<qs.length){render()}else{showResult()}
 }
 function showResult(){
-  const winner=Object.keys(score).reduce((a,b)=>score[a]>=score[b]?a:b);
+  const maxScore=Math.max(...Object.values(score));
+  const tied=Object.keys(score).filter(k=>score[k]===maxScore);
+  let winner=tied[0];
+  if(tied.length>1){
+    for(let j=answerTypes.length-1;j>=0;j--){
+      if(tied.includes(answerTypes[j])){winner=answerTypes[j];break;}
+    }
+  }
   const r=types[winner];
   currentResult=r;
   quiz.classList.remove("active");result.classList.add("active");
+  window.scrollTo(0,0);
   avatar.textContent=r.emoji;type.textContent=r.name;code.textContent=r.code;
   desc.textContent=r.desc;bestFor.textContent=r.best;quote.textContent=r.quote;guide.textContent=r.guide;
   setMeter("act",r.act);setMeter("exec",r.exec);setMeter("privacy",r.privacy);
@@ -327,13 +344,14 @@ function setMeter(id,v){
 }
 function copyResult(){
   if(!currentResult) return;
-  const text=`我的 DeepMate 社交 AI 分身是「${currentResult.name}」${currentResult.emoji}\n${currentResult.desc}\n\n${currentResult.quote}`;
+  const text=`我的社交 AI 分身是「${currentResult.name}」${currentResult.emoji}\n${currentResult.desc}\n\n${currentResult.quote}`;
   navigator.clipboard?.writeText(text).then(()=>alert("结果文案已复制，可以直接发给朋友～")).catch(()=>{});
 }
 function restartQuiz(){
-  i=0;score={icebreaker:0,radar:0,keeper:0,secretary:0,guardian:0,companion:0};
+  i=0;score={icebreaker:0,radar:0,detective:0,keeper:0,secretary:0,guardian:0};answerTypes=[];
   sessionId=crypto.randomUUID();startedAt=null;currentResult=null;
   result.classList.remove("active");start.classList.add("active");
+  window.scrollTo(0,0);
 }
 </script>
 </body>
